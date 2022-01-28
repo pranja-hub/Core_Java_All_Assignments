@@ -116,8 +116,8 @@ public class Income_Tax {
 import java.util.Scanner;
 class CUIApplication {
     public static void main(String[] args) {
-        String userId = "hello";
-        String password = "0000";
+        String userId = "Pranjal";
+        String password = "admin@123";
         Scanner input = new Scanner(System.in);
 
         for (int i=3;i>=1;i--) {
