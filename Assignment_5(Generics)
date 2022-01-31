@@ -3,70 +3,174 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
  
-                                               // QUESTION 1
-class pair{
-    String  num;
-    String name;
-    public pair(String num, String name){
-        this.num = num;
-        this.name = name;
-    }
-    public String pairkey(String num){
-        return num;
-    }
-    public String pairvalue(String name){
-        return name;
-    }
-}
-public class generics4 {
-    public static void main(String[] args) {
-        HashMap<Integer, pair> hashMap = new HashMap<>();
-        Scanner sc = new Scanner(System.in);
+ 
+                                                                 //QUESTION 1
 
-        pair p = new pair("654","Pranjal");
-        hashMap.put(1,p);
-        for (Map.Entry<Integer, pair> entry: hashMap.entrySet()){
-            int key = entry.getKey();
-            pair value = entry.getValue();
-            System.out.println(key + " Details: ");
-            System.out.println(value.num + " " + value.name);
-  	}
-  }
-}
+      class detail {
+          int id;
+          String name;
+          String department;
+          int salary;
+          public detail(int id, String name, String department, int salary){
+              this.id = id;
+              this.name = name;
+              this.department = department;
+              this.salary = salary;
+          }
+          public String DisplayId(){
+              return ("The id of " + name + " is: " + id);
+          }
+          public String DisplaySal(){
+              return ("The salary of" + name + " is: " + salary);
+          }
+          public String DisplayDep(){
+              return ("Department of " + name + " is: " + department);
+          }
+      }
+      public class generics {
+          public static void main(String[] args) {
+              HashSet<detail> Employee = new HashSet<>();
+              detail E1 = new detail(01,"Pranjal","IT",3000 );
+              detail E2 = new detail(02,"Harsh", "It", 5000);
+              detail E3 = new detail(03,"Abhi", "IT",8000);
+              detail E4 = new detail(04,"Rohan", "IT",3000);
+              detail E5 = new detail(05,"Harish","IT",7000);
+
+              Employee.add(E1);
+              Employee.add(E2);
+              Employee.add(E3);
+              Employee.add(E4);
+              Employee.add(E5);
+
+              for (detail d : Employee){
+                  // System.out.println(d.id + " " + d.name + " " + d.department + " " + d.salary);
+                  System.out.println(d.DisplayId());
+                  System.out.println(d.DisplaySal());
+                  System.out.println(d.DisplayDep());
+              }
+          }
+      }
+
+                                                      //QUESTION 2
 
 
-                                              // QUESTION 2
+         import java.util.HashMap;
+         import java.util.Map;
+
+         public class generics2 {
+             public static void main(String[] args) {
+                 HashMap<Integer, Double> hash = new HashMap<>();
+                 hash.put(0, 7.5);
+                 hash.put(1, 7.2);
+                 hash.put(2, 7.1);
+                 hash.put(3, 7.3);
+                 hash.put(4, 7.4);
+                 hash.put(5, 7.6);
+                 hash.put(6, 7.7);
+                 hash.put(7, 7.8);
+                 hash.put(8, 7.9);
+                 hash.put(9, 7.0);
+
+                 for (Map.Entry k: hash.entrySet()){
+                     System.out.println(k.getKey() + " " + k.getValue());
+                 }
+              //   System.out.println(hash);
+             }
+         }
 
 
-class pair1{
-    String msg;
-    Date date;
-    public pair1(String msg, Date date){
-        this.msg = msg;
-        this.date = date;
-    }
-    public String Message(String msg){
-        return this.msg;
-    }
-    public Date getDate(int date){
-        return this.date;
-    }
-}
+                                                      //QUESTION 3
 
-public class generics4 {
-    public static void main(String[] args) {
-        HashMap<Integer, pair> hashMap = new HashMap<>();
-        Scanner sc = new Scanner(System.in);
 
-        HashMap<String, pair1> hashMap1 = new HashMap<>();
-        java.util.Date date = new java.util.Date();
-        pair1 p2 = new pair1("Today's Date is: ", date);
-        hashMap1.put("Hey",p2);
-        for (Map.Entry<String, pair1> entry : hashMap1.entrySet()){
-            String key = entry.getKey();
-            pair1 value = entry.getValue();
-            System.out.println(key);
-            System.out.println(value.msg + " " + value.date);
-     } 
-  }
-}
+           import java.util.ArrayList;
+
+           public class generics3 {
+               public static void main(String[] args) {
+                   ArrayList<Integer> arrayList = new ArrayList<>();
+                   arrayList.add(54);
+                   arrayList.add(65);
+                   arrayList.add(78);
+                   arrayList.add(99);
+                   arrayList.add(76);
+                   arrayList.add(2,104);
+                   arrayList.add(5,666);
+                   for (int i = 0; i < arrayList.size(); i++){
+                       System.out.println(arrayList.get(i));
+                   }
+           //        System.out.println(arrayList);
+               }
+           }
+
+ 
+ 
+                                               // QUESTION 4
+                                               
+                                                       (A)
+                                                       
+
+      class pair{
+          String  num;
+          String name;
+          public pair(String num, String name){
+              this.num = num;
+              this.name = name;
+          }
+          public String pairkey(String num){
+              return num;
+          }
+          public String pairvalue(String name){
+              return name;
+          }
+      }
+      public class generics4 {
+          public static void main(String[] args) {
+              HashMap<Integer, pair> hashMap = new HashMap<>();
+              Scanner sc = new Scanner(System.in);
+
+              pair p = new pair("654","Pranjal");
+              hashMap.put(1,p);
+              for (Map.Entry<Integer, pair> entry: hashMap.entrySet()){
+                  int key = entry.getKey();
+                  pair value = entry.getValue();
+                  System.out.println(key + " Details: ");
+                  System.out.println(value.num + " " + value.name);
+         }
+        }
+      }
+
+
+                                                                        (B)
+
+
+       class pair1{
+           String msg;
+           Date date;
+           public pair1(String msg, Date date){
+               this.msg = msg;
+               this.date = date;
+           }
+           public String Message(String msg){
+               return this.msg;
+           }
+           public Date getDate(int date){
+               return this.date;
+           }
+       }
+
+       public class generics4 {
+           public static void main(String[] args) {
+               HashMap<Integer, pair> hashMap = new HashMap<>();
+               Scanner sc = new Scanner(System.in);
+
+               HashMap<String, pair1> hashMap1 = new HashMap<>();
+               java.util.Date date = new java.util.Date();
+               pair1 p2 = new pair1("Today's Date is: ", date);
+               hashMap1.put("Hey",p2);
+               for (Map.Entry<String, pair1> entry : hashMap1.entrySet()){
+                   String key = entry.getKey();
+                   pair1 value = entry.getValue();
+                   System.out.println(key);
+                   System.out.println(value.msg + " " + value.date);
+            } 
+         }
+       }
